@@ -1,31 +1,62 @@
 NAME	=	libasm.a
 
-CC			=	nasm
+NASM	=	nasm -f macho64 # Añadir flag -L
 
-SRC	=	hello.asm
-#		ft_strlen.asm \
-#		ft_strcpy.asm \
-#		ft_strcmp.asm \
-#		ft_write.asm \
-#		ft_read.asm \
-#		ft_strdup.asm
+CC		=	gcc -Wall -Wextra -Werror
 
-OBJ	=	$(SRC:.c=.o)
+SRCS	=	ft_strlen.s \
+			ft_strcpy.s
+#recorrer_matriz.s
+#		hello.asm
+#		ft_strlen.s \
+#		ft_strcpy.s \
+#		ft_strcmp.s \
+#		ft_write.s \
+#		ft_read.s \
+#		ft_strdup.s \
+#		hello.s 
+
+OBJS	=	$(SRCS:.s=.o)
+
+CSRC	=	main.c
+
+EXT		=	$(SRCS:.s=)
 
 RM		=	rm -f
 
+AR		=	ar rcs # rc ó rcs (revisar)
+
 all: $(NAME)
 
-$(NAME):	$(OBJ)
-			nasm -fmacho64 $(SRC)
-			ld $(OBJ) -o -macosx_version_min 18.6.0 -lSystem
+%.o: %.s
+			$(NASM) $<
 
-#ar rcs $(NAME) s(OBJ)
+$(NAME): $(OBJS)
+			$(AR) $(NAME) $^
+
+run: $(NAME)
+			$(CC) $(CSRC) $(NAME) -o my_ass
+			./my_ass
 
 clean:
-			rm -f $(OBJ)
+			$(RM) $(OBJS)
 
 fclean: clean
-			rm -f $(NAME)
+			$(RM) $(NAME)
+			$(RM) a.out
 
 re: fclean all
+
+vobj:
+	cat $(OBJS)
+
+vname:
+	cat $(NAME)
+
+vsr:
+	cat $(SRCS)
+
+launch:
+		$(NAME)
+		gcc $(FLAGS) main.c $(name) -o exe
+

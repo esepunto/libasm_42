@@ -4,10 +4,10 @@
 ;	OK >>>> nasm -fmacho64 hello.asm && ld hello.o -o hello -macosx_version_min 18.6.0 -lSystem && ./hello
 ;  KO >>>> nasm -fmacho64 hello.asm && ld hello.o && ./a.out
 ; ----------------------------------------------------------------------------------------
-			global		_main
+			global		start
 						
 			section		.text
-_main:		mov			rax, 0x02000004			; system call for write
+start:		mov			rax, 0x02000004			; system call for write
 			mov			rdi, 1					; file handle 1 is stdout
 			mov			rsi, message			; address of string to output
 			mov			rdx, 13					; number of bytes
