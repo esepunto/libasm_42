@@ -7,20 +7,18 @@ CC		=	gcc -Wall -Wextra -Werror
 SRCS	=	ft_strlen.s \
 			ft_strcpy.s \
 			ft_strcmp.s \
-			ft_write.s 
-#recorrer_matriz.s
-#		hello.asm
-#		ft_strcpy.s \
+			ft_write.s \
+			ft_read.s 
 
-#		ft_read.s \
-#		ft_strdup.s \
-#		hello.s 
+SRCC	=	test_strlen.c \
+			test_strcpy.c \
+			test_strcmp.c \
+			test_write.c \
+			test_read.c 
 
 OBJS	=	$(SRCS:.s=.o)
 
-CSRC	=	main.c
-
-EXT		=	$(SRCS:.s=)
+OBJC	=	$(SRCC:.c=.o)
 
 RM		=	rm -f
 
@@ -31,15 +29,15 @@ all: $(NAME)
 %.o: %.s
 			$(NASM) $<
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(OBJC)
 			$(AR) $(NAME) $^
 
 run: $(NAME)
-			$(CC) $(CSRC) $(NAME) -o my_ass
+			$(CC) $(OBJC) $(NAME) -o my_ass
 			./my_ass
 
 clean:
-			$(RM) $(OBJS)
+			$(RM) $(OBJS) $(OBJC)
 
 fclean: clean
 			$(RM) $(NAME)
