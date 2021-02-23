@@ -14,7 +14,8 @@ SRCC	=	test_strlen.c \
 			test_strcpy.c \
 			test_strcmp.c \
 			test_write.c \
-			test_read.c 
+			test_read.c \
+			test_strdup.c
 
 OBJS	=	$(SRCS:.s=.o)
 
@@ -30,11 +31,11 @@ all: $(NAME)
 			$(NASM) $<
 
 $(NAME): $(OBJS) $(OBJC)
-			$(AR) $(NAME) $^
+		@	$(AR) $(NAME) $^
 
 run: $(NAME)
-			$(CC) main.c $(NAME) -o my_ass
-			./my_ass
+		@	$(CC) main.c $(NAME) -o my_ass
+		@	./my_ass
 
 clean:
 			$(RM) $(OBJS) $(OBJC)

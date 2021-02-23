@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:21:33 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/23 14:38:45 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/23 16:37:52 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,6 @@ void	print_title(char *s)
 void	print_equal_size_t(size_t expected, size_t real)
 {
 	printf("%s   %zu == %zu\n", expected == real ? _GREEN : _RED, expected, real);
-}
-
-void	print_equal_string(char *expected, char *real)
-{
-	printf("%s   %s == %s\n", strcmp(expected, real) == 0 ? _GREEN : _RED, expected, real);
-}
-
-void	print_equal_compare(char *expected, char *real)
-{
-	printf("%s   %d == %d\n", strcmp(expected, real) == ft_strcmp(expected, real)  ? _GREEN : _RED, strcmp(expected, real), ft_strcmp(expected, real));
 }
 
 void	print_with_write(char *str)
@@ -49,7 +39,7 @@ int		main(int argc, char **argv)
 {
 	if (argc != 2)
 	{
-		printf("Escribe ./my_ass seguido del número del test que quieres hacer:\n1 = strlen\n2 = strcpy\n3 = strcmp\n4 = write\n5 = read\n6 = strdup\n");
+		printf("\n\nEscribe ./my_ass seguido del número del test que quieres hacer:\n1 = strlen\n2 = strcpy\n3 = strcmp\n4 = write\n5 = read\n6 = strdup\n");
 		exit (0);
 	}
 	if (strcmp(argv[1], "1") == 0)
@@ -65,6 +55,8 @@ int		main(int argc, char **argv)
 		test_ft_read();
 		test_ft_read2();
 	}
+	else if (strcmp(argv[1], "6") == 0)
+		test_ft_strdup();
 	else 
 	{
 		printf("Escribe ./my_ass seguido del número del test que quieres hacer:\n1 = strlen\n2 = strcpy\n3 = strcmp\n4 = write\n5 = read\n6 = strdup\n");
