@@ -43,7 +43,7 @@ clean:
 
 fclean: clean
 			$(RM) $(NAME)
-			$(RM) a.out
+			$(RM) my_ass
 
 re: fclean all
 
