@@ -7,14 +7,11 @@
 
 _ft_strcmp:
 				cmp		byte[rsi], 0x0
-				jz		exit						;o una llamada a exit
+				je		exit						;o una llamada a exit
 				cmp		byte[rdi], 0x0
-				jz		exit
+				je		exit
 				cmpsb
-				jz		exit
-				je		_ft_strcmp
+				jmp		_ft_strcmp
 
 exit:
-				ret						;o crear fiunci´pon exit con un ret dentro
-
-
+				ret						;o crear fiunción exit con un ret dentro

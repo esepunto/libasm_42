@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:21:33 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/23 16:37:52 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/23 18:48:05 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int		main(int argc, char **argv)
 		test_ft_read();
 		test_ft_read2();
 	}
-	else if (strcmp(argv[1], "6") == 0)
-		test_ft_strdup();
+//	else if (strcmp(argv[1], "6") == 0)
+//		test_ft_strdup();
 	else 
 	{
 		printf("Escribe ./my_ass seguido del número del test que quieres hacer:\n1 = strlen\n2 = strcpy\n3 = strcmp\n4 = write\n5 = read\n6 = strdup\n");
