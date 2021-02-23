@@ -33,7 +33,7 @@ $(NAME): $(OBJS) $(OBJC)
 			$(AR) $(NAME) $^
 
 run: $(NAME)
-			$(CC) $(OBJC) $(NAME) -o my_ass
+			$(CC) main.c $(NAME) -o my_ass
 			./my_ass
 
 clean:

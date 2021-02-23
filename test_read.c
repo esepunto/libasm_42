@@ -33,12 +33,12 @@ void	test_ft_read2()
 
 void	test_ft_read()
 {
-	char	buf[1000];
+	char	buf[32];
 	int		fd;
 	int		t;
 
 	fd = open("text.txt", O_RDONLY);
-	while ((t = ft_read(fd, &buf, 1)) > 0)
+	while ((t = ft_read(fd, &buf, 31)) > 0)
 		printf("%s", buf);
 	close(fd);
 }
