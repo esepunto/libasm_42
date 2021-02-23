@@ -6,12 +6,12 @@ CC		=	gcc -Wall -Wextra -Werror
 
 SRCS	=	ft_strlen.s \
 			ft_strcpy.s \
-			ft_strcmp.s
+			ft_strcmp.s \
+			ft_write.s 
 #recorrer_matriz.s
 #		hello.asm
-#		ft_strlen.s \
 #		ft_strcpy.s \
-#		ft_write.s \
+
 #		ft_read.s \
 #		ft_strdup.s \
 #		hello.s 
