@@ -7,14 +7,16 @@
 				global		_ft_write
 				extern		___error
 
-_ft_write:									; rdi = file descriptor, rsi = string, rdx = byte count
+_ft_write:
 				mov			rax, 0x2000004	; write / MacOS calling convention
-				syscall
+				syscall						; to call systemd functions
 				jc			error			; error sets carry flag
 				ret
-error:
-				push rax					; save errno
+error:										; push&pop because the stack must be aligned
+											; to a 16-byte boundary before making a call.
+				push r8						; To aligne the stack 
 				call ___error				; rax is now points to external variable errno.
-				pop qword[rax]				; The QWORD PTR is just a size specifier (It means that a 64 bit value is read from the address)
-				mov rax, -1					; ¿por qué se hace?
+;				pop qword[rax]				; 64 bit value is read
+				pop r9						; To aligne the stack
+				mov rax, -1					; return -1 to indicate an error
 				ret
