@@ -5,8 +5,7 @@
 
 				section		.text
 				global		_ft_strdup
-				extern		___error
-				extern		___malloc
+				extern		_malloc
 				extern		_ft_strcpy
 				extern		_ft_strlen
 
@@ -20,13 +19,14 @@ allocate:
 				mov			rdi, rax
 				inc			rdi				; rdi++
 				push		rdi
-				call		___malloc
+				call		_malloc
 				test		rax, rax		; check if the malloc failed
 				jz			fail_exit
 				jp			duplicate		; jp = jump to
 duplicate:
 				mov			rsi, rdx		; rdi -> rdx -> rsi
 				call 		_ft_strcpy		; copy rsi to rdi
+				mov			byte [rax + 1], 0x0
 				ret
 
 fail_exit:

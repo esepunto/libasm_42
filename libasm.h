@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:11:00 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/26 16:42:23 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/26 18:42:37 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,4 @@ void		print_equal_string(char *expected, char *real);
 void		print_equal_compare(char *expected, char *real);
 void		print_with_write(char *str);
 void		print_equal_ftwrite(int expected, int real);
-void		*malloc(size_t size);
-
 #endif
