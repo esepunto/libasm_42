@@ -8,8 +8,8 @@ SRCS	=	ft_strlen.s \
 			ft_strcpy.s \
 			ft_strcmp.s \
 			ft_write.s \
-			ft_read.s 
-#			ft_strdup
+			ft_read.s \
+			ft_strdup.s
 
 SRCC	=	test_strlen.c \
 			test_strcpy.c \
@@ -35,7 +35,7 @@ $(NAME): $(OBJS) $(OBJC)
 		@	$(AR) $(NAME) $^
 
 run: $(NAME)
-		@	$(CC) main.c $(NAME) -o my_ass
+		@	$(CC) main.c -L./ -lasm -o my_ass
 		@	./my_ass
 
 clean:

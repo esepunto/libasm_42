@@ -5,13 +5,21 @@ void	toprint_ftwrite(char *s)
 	int	i;
 	int	j;
 	
-	i = ft_write(1, s, strlen(s));
 	j = write(1, s, strlen(s));
+	i = ft_write(1, s, strlen(s));
+	errno = 0;
 	print_equal_ftwrite(i, j);
 	if (i < 0 || j < 0)
 		perror("errno");
 	printf("\n");
 }
+
+void	print_equal_ftwrite(int expected, int real)
+{
+	printf("%s   %d == %d", expected == real ? _GREEN : _RED, expected, real);
+	printf("%s\n", _R);
+}
+
 
 void	test_ft_write()
 {
@@ -30,22 +38,29 @@ void	test_ft_write()
 	s = "";
 	toprint_ftwrite(s);
 
-	i = ft_write(1, NULL, 0);
+
 	j = write(1, NULL, 0);
+	errno = 0;
+	i = ft_write(1, NULL, 0);
 	print_equal_ftwrite(i, j);
 	if (i < 0 || j < 0)
 		perror("errno");
 	printf("\n");
 
-	i = ft_write(-1, "hola\n", 5);
+	
+
 	j = write(-1, "hola\n", 5);
+	errno = 0;
+	i = ft_write(-1, "hola\n", 5);
 	print_equal_ftwrite(i, j);
 	if (i < 0 || j < 0)
 		perror("errno");
 	printf("%s\n", _R);
 
-	i = ft_write(1, NULL, 3);
+	
 	j = write(1, NULL, 3);
+	errno = 0;
+	i = ft_write(1, NULL, 3);
 	print_equal_ftwrite(i, j);
 	if (i < 0 || j < 0)
 		perror("errno");

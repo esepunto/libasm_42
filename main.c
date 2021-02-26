@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 16:21:33 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/23 18:48:05 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/26 13:29:43 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,6 @@ void	print_with_write(char *str)
 	ft_write(1, str, strlen(str));
 }
 
-void	print_equal_ftwrite(int expected, int real)
-{
-	printf("%s   %d == %d", expected == real ? _GREEN : _RED, expected, real);
-	printf("%s\n", _R);
-}
 
 int		main(int argc, char **argv)
 {

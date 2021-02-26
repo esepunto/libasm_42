@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:11:00 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/25 19:20:05 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/26 16:42:23 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <string.h>
 # include <stdio.h>
-# include <errno.h>
 # include <fcntl.h>
 # include <stdlib.h>
 # include <errno.h>
@@ -49,7 +48,7 @@ char		*ft_strcpy(char *dst, const char *src);
 int			ft_strcmp(const char *s1, const char *s2);
 ssize_t		ft_write(int fildes, const void *buf, size_t mbyte);
 ssize_t		ft_read(int fildes, void *buf, size_t nbyte);
-//char		*ft_strdup(const char *s1);
+char		*ft_strdup(const char *s1);
 void		test_ft_strcpy();
 void		test_ft_strlen();
 void		test_ft_strcmp();
@@ -63,5 +62,6 @@ void		print_equal_string(char *expected, char *real);
 void		print_equal_compare(char *expected, char *real);
 void		print_with_write(char *str);
 void		print_equal_ftwrite(int expected, int real);
+void		*malloc(size_t size);
 
 #endif
