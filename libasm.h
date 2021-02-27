@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:11:00 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/27 15:52:24 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/27 19:32:12 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,4 @@ int			ft_strcmp(const char *s1, const char *s2);
 ssize_t		ft_write(int fildes, const void *buf, size_t mbyte);
 ssize_t		ft_read(int fildes, void *buf, size_t nbyte);
 char		*ft_strdup(const char *s1);
-void		test_ft_strcpy();
-void		test_ft_strlen();
-void		test_ft_strcmp();
-void		test_ft_write();
-void		test_ft_read();
-void		test_ft_strdup();
-void		print_title(char *s);
 #endif

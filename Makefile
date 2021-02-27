@@ -1,6 +1,6 @@
 NAME	=	libasm.a
 
-NASM	=	nasm -f macho64 # Añadir flag -L
+NASM	=	nasm -f macho64
 
 CC		=	gcc -Wall -Wextra -Werror
 
@@ -11,37 +11,23 @@ SRCS	=	ft_strlen.s \
 			ft_read.s \
 			ft_strdup.s
 
-SRCC	=	test_strlen.c \
-			test_strcpy.c \
-			test_strcmp.c \
-			test_write.c \
-			test_read.c \
-			test_strdup.c
-
 OBJS	=	$(SRCS:.s=.o)
-
-OBJC	=	$(SRCC:.c=.o)
 
 RM		=	rm -f
 
-AR		=	ar rcs # rc ó rcs (revisar)
+AR		=	ar rcs # rcs: replace, create, sort
 
 all: $(NAME)
-		@	$(CC) main.c -L./ -lasm -o my_ass
-		@	./my_ass
+			$(CC) main.c -L./ -lasm -o my_ass
 
 %.o: %.s
-			$(NASM) $<
+			$(NASM) $?
 
-$(NAME): $(OBJS) $(OBJC)
-		@	$(AR) $(NAME) $^
-
-#run: $(NAME)
-#		@	$(CC) main.c -L./ -lasm -o my_ass
-#		@	./my_ass
+$(NAME): $(OBJS)
+			$(AR) $(NAME) $^
 
 clean:
-			$(RM) $(OBJS) $(OBJC)
+			$(RM) $(OBJS)
 
 fclean: clean
 			$(RM) $(NAME)
