@@ -1,6 +1,11 @@
 #include "libasm.h"
 
-void	test_ft_strlen()
+static void		print_equal_size_t(size_t expected, size_t real)
+{
+	printf("%s   %zu == %zu\n", expected == real ? _GREEN : _RED, expected, real);
+}
+
+void			test_ft_strlen()
 {
 	char	*str;
 	print_title("strlen vs. ft_strlen");

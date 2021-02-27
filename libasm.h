@@ -6,7 +6,7 @@
 /*   By: ssacrist <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:11:00 by ssacrist          #+#    #+#             */
-/*   Updated: 2021/02/26 18:42:37 by ssacrist         ###   ########.fr       */
+/*   Updated: 2021/02/27 15:52:24 by ssacrist         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,6 @@ void		test_ft_strlen();
 void		test_ft_strcmp();
 void		test_ft_write();
 void		test_ft_read();
-void		test_ft_read2();
 void		test_ft_strdup();
 void		print_title(char *s);
-void		print_equal_size_t(size_t expected, size_t real);
-void		print_equal_string(char *expected, char *real);
-void		print_equal_compare(char *expected, char *real);
-void		print_with_write(char *str);
-void		print_equal_ftwrite(int expected, int real);
 #endif

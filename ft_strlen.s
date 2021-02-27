@@ -17,15 +17,14 @@
 ;	2.- Definir variable counter como dq e igualar a valor 0.
 ;	3.- 
 
-					
 			section		.text
 			global		_ft_strlen
 _ft_strlen:
 			xor			rax, rax				;count to 0 
 loop:
-			cmp			byte [rdi + rax], 0x0	; chr  == ?
+			cmp			byte [rdi + rax], 0		; chr  == ?
 			jz			exit					; if chr == 0 ==> exit from loop
 			inc			rax						; add count = count++
-			jne			loop					; if chr != 0 ==> go to loop
+			jmp			loop					; if chr != 0 ==> go to loop
 exit:
 			ret									; return (rax)

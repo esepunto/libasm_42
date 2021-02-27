@@ -1,6 +1,12 @@
 #include "libasm.h"
 
-void	toprint_ftwrite(char *s)
+static void		print_equal_ftwrite(int expected, int real)
+{
+	printf("%s   %d == %d", expected == real ? _GREEN : _RED, expected, real);
+	printf("%s\n", _R);
+}
+
+static void		toprint_ftwrite(char *s)
 {
 	int	i;
 	int	j;
@@ -14,14 +20,7 @@ void	toprint_ftwrite(char *s)
 	printf("\n");
 }
 
-void	print_equal_ftwrite(int expected, int real)
-{
-	printf("%s   %d == %d", expected == real ? _GREEN : _RED, expected, real);
-	printf("%s\n", _R);
-}
-
-
-void	test_ft_write()
+void			test_ft_write()
 {
 	print_title("write vs. ft_write");
 	printf("%s", _YELLOW);

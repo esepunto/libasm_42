@@ -1,6 +1,6 @@
 #include "libasm.h"
 
-void	test_ft_read2()
+static void	test_ft_read2()
 {
 	int	fd = open("text.txt", O_RDONLY);
 	char	buffer[100] = {0};
@@ -41,4 +41,5 @@ void	test_ft_read()
 	while ((t = ft_read(fd, &buf, 31)) > 0)
 		printf("%s", buf);
 	close(fd);
+	test_ft_read2();
 }

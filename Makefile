@@ -27,6 +27,8 @@ RM		=	rm -f
 AR		=	ar rcs # rc ó rcs (revisar)
 
 all: $(NAME)
+		@	$(CC) main.c -L./ -lasm -o my_ass
+		@	./my_ass
 
 %.o: %.s
 			$(NASM) $<
@@ -34,9 +36,9 @@ all: $(NAME)
 $(NAME): $(OBJS) $(OBJC)
 		@	$(AR) $(NAME) $^
 
-run: $(NAME)
-		@	$(CC) main.c -L./ -lasm -o my_ass
-		@	./my_ass
+#run: $(NAME)
+#		@	$(CC) main.c -L./ -lasm -o my_ass
+#		@	./my_ass
 
 clean:
 			$(RM) $(OBJS) $(OBJC)

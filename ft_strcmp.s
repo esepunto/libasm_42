@@ -19,7 +19,7 @@ _ft_strcmp:
 			movzx	rax, byte[rdi]			; movzx copia y rellenando con 0s
 			movzx	rcx, byte[rsi]
 			sub		rax, rcx				; no hace falta cmp, sub ya coloca los flags
-			jz		if_end				; junp == junp if zero
+			jz		if_end					; junp == junp if zero
 
 exit:
 			ret

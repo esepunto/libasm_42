@@ -1,12 +1,12 @@
 #include "libasm.h"
 
-void	print_equal_compare(char *s1, char *s2)
+static void	print_equal_compare(char *s1, char *s2)
 {
 	printf("%s%s\n  %svs\n%s%s\n", _R, s1, _YELLOW, _R, s2);
 	printf("%s   strcmp == %d\nft_strcmp == %d\n\n", strcmp(s1, s2) == ft_strcmp(s1, s2)  ? _GREEN : _RED, strcmp(s1, s2), ft_strcmp(s1, s2));
 }
 
-void	test_ft_strcmp()
+void		test_ft_strcmp()
 {
 	char	*s1;
 	char	*s2;
